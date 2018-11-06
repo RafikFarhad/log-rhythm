@@ -34,13 +34,19 @@ php artisan vendor:publish --provider="Farhad\LogRhythm\LogRhythmServiceProvider
             'via' => \Farhad\LogRhythm\LogRhythmChannel::class,
         ],
        ];
+
+3) Run the command below to migrate database table: 
+
+```shell
+php artisan migrate"
+```
    ```
-5) Update your `.env` ( If you cache your `env` then clear cache to load new settings by `php artisan config:cache`):
+6) Update your `.env` ( If you cache your `env` then clear cache to load new settings by `php artisan config:cache`):
    
    ```php
    LOG_CHANNEL=logrhythm
    ```
-6) You can control the logging information by updating `config/logrhythm.php` file.
+7) You can control the logging information by updating `config/logrhythm.php` file.
 
 
 ## License
