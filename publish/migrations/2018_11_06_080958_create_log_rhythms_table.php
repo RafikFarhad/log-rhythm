@@ -13,7 +13,7 @@ class CreateLogRhythmsTable extends Migration
      */
     public function up()
     {
-        Schema::create('laravel_logs', function (Blueprint $table) {
+        Schema::create(config('logrhythm.table_name', 'laravel_logs'), function (Blueprint $table) {
             $table->increments('id');
             $table->text('message')->nullable();
             $table->text('context')->nullable();
@@ -34,6 +34,6 @@ class CreateLogRhythmsTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('laravel_logs');
+        Schema::dropIfExists(config('logrhythm.table_name', 'laravel_logs'));
     }
 }
