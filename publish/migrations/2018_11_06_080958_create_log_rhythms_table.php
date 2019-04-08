@@ -18,7 +18,7 @@ class CreateLogRhythmsTable extends Migration
             $table->text('message')->nullable();
             $table->text('context')->nullable();
             $table->integer('level')->default(200);
-            $table->enum('level_name', ['emergency', 'alert', 'critical', 'error', 'warning', 'notice', 'info', 'debug']);
+            $table->string('level_name', 15);
             $table->ipAddress('user_ip');
             $table->string('url', 200)->nullable();
             $table->string('http_method', 200)->nullable();

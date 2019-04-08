@@ -10,7 +10,7 @@ return [
     | Determine whether the input from the request added or not.
     |
     */
-    'input' => false,
+    'input' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -20,7 +20,7 @@ return [
     | Determine whether the stack trace included or not.
     |
     */
-    'stack_trace' => false,
+    'stack_trace' => true,
 
     /*
     |--------------------------------------------------------------------------
@@ -30,6 +30,36 @@ return [
     | The database table name to store the logs.
     |
     */
-    'table_name' => false,
+    'table_name' => 'laravel_logs',
+
+    /*
+    |--------------------------------------------------------------------------
+    | URL Namespace
+    |--------------------------------------------------------------------------
+    |
+    | The Log Viewer Route Namespace.
+    |
+    */
+    'url' => 'logrhythm',
+
+    /*
+    |--------------------------------------------------------------------------
+    | URL Middleware
+    |--------------------------------------------------------------------------
+    |
+    | The Log Viewer Middleware.
+    |
+    */
+    'middleware' => ['web'],
+
+    /*
+    |--------------------------------------------------------------------------
+    | Paginate
+    |--------------------------------------------------------------------------
+    |
+    | The Log Viewer Per Page Log Limit.
+    |
+    */
+    'paginate' => 5,
 
 ];

@@ -17,9 +17,7 @@ class LogRhythmServiceProvider extends ServiceProvider
             __DIR__ . '/../publish/config/' => app_path('../config'),
             __DIR__ . '/../publish/migrations/' => app_path('../database/migrations'),
         ], 'Farhad-LogRhythm');
-//        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
-
-
+        $this->loadRoutesFrom(__DIR__.'/routes/web.php');
     }
 
     /**
@@ -29,6 +27,6 @@ class LogRhythmServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->make('Farhad\LogRhythm\Http\Controllers\LogViewerController');
     }
 }

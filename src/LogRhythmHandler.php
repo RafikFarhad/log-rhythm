@@ -26,6 +26,7 @@ class LogRhythmHandler extends AbstractProcessingHandler
     protected function write(array $record)
     {
         try {
+            $previousMemoryLimit = ini_get('memory_limit');
             ini_set('memory_limit', '256M');
             $log = new LogRhythm();
             $log->message = $record['message'];
@@ -40,9 +41,8 @@ class LogRhythmHandler extends AbstractProcessingHandler
         } catch (\Exception $e) {
             Log::channel('stack')->emergency($e->getMessage());
         } finally {
-            ini_set('memory_limit', '128M');
+            ini_set('memory_limit', $previousMemoryLimit);
         }
-
     }
 
     /**
